@@ -1,4 +1,4 @@
-// const { PGPASSWORD } = process.env;
+const { PGPASSWORD } = process.env;
 const credentials = {
   host: "localhost",
   user: "postgres",
