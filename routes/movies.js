@@ -1,16 +1,19 @@
 const express = require("express");
-const pool = require("../config/dbconn");
+const {
+  getLongestDuration,
+  createMovie,
+  getAll,
+  getTopMOVIES,
+} = require("../controller/moviesController");
 
 const route = express.Router();
-
-route.get("/longest-duration-movies", async (req, res) => {
-  try {
-    const client = await pool.connect();
-    res.status(200).send("longest-duration-movies");
-    client.release(true);
-  } catch (error) {
-    res.status(500).send({ error: error.message });
-  }
-});
+//get all movies testing
+route.get("/all-movies", getAll);
+//get top 10
+route.get("/longest-duration-movies", getLongestDuration);
+//post a new movie
+route.post("/new-movie", createMovie);
+//get top rated movies
+route.get("/top-rated-movies", getTopMOVIES);
 
 module.exports = route;

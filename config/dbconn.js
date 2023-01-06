@@ -1,6 +1,8 @@
 const { Client, Pool } = require("pg");
 const credentials = require("./credentials");
+
 const config = {
+  connectionString: credentials.connconnectionString,
   host: credentials.host,
   user: credentials.user,
   database: credentials.database,

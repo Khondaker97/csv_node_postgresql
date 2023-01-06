@@ -19,3 +19,11 @@ CREATE TABLE ratings(
 
 INSERT INTO movies(tconst, averageRating, numVotes)
 VALUES(tconst, averageRating, numVotes);
+
+SELECT * from movies ORDER BY runtimeMinutes DESC LIMIT 10;
+
+INSERT INTO movies(tconst, titleType, primaryTitle, runtimeMinutes, genres) VALUES(c1, c2, c2, c4, c5);
+
+SELECT m.tconst, primaryTitle,genres, averageRating From movies as m
+INNER JOIN ratings ON m.tconst = ratings.tconst 
+WHERE averageRating > 6.0 ORDER BY averageRating DESC;
