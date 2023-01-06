@@ -16,14 +16,18 @@ First set your credentials
 
 - user, database, password must
 
+### Before parsing csv in development mode
+
+1. create movies and ratings table
+
+### All raw queries can be observed at database.sql
+
 ### To parse csv file
 
 1.  set password into credentials directly first(without using env)
 2.  run once - npm run parse
 
-Note: csvParse.js isn't attached to index file because it will every time then. After parsing you can set password through .env
-
-### All raw can be observed at database.sql
+Note: csvParse.js isn't attached to index file because it will run every time then. After parsing you can set password through .env
 
 ### run in development
 
